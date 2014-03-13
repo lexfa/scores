@@ -6,8 +6,8 @@
     "url": "git://github.com/einaros/ws.git"
   },
   "dependencies": {
-    "ws": "0.4.x",
-    "express": "3.x"
+    "ws": "^0.4.31",
+    "express": "^3.4.8"
   },
   "engines": {
     "node": "0.10.x",

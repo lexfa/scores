@@ -4,13 +4,6 @@
   <head>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
-
-    $(initSite);
-
-      function initSite(){
-          $('#btnSendScore').click(sendScore);
-      }
-
       var host = location.origin.replace(/^http/, 'ws')
       var ws = new WebSocket(host);
       var score = new Object();
@@ -18,16 +11,6 @@
       
       ws.onopen = function(){};
       ws.onmessage = receiveScore;
-
-      function sendScore()
-      {
-        score.team1 = $('#team1').val();
-        score.team2 = $('#team2').val();
-
-        console.log('entra Enviado');
-        ws.send(JSON.stringify(score));
-        console.log('Score Enviado');
-      }
 
       function receiveScore(evt)
       {
@@ -40,15 +23,6 @@
     </script>
   </head>
   <body>
-    <div>
-      <label>Equipo 1:</label>
-      <input id="team1" >
-      <br />
-      <label>Equipo 2:</label>
-      <input id="team2" >
-      <br/>
-      <button id="btnSendScore">Enviar Marcador</button>
-    </div>
     <h1>Scores Actual</h1>
     <p id="scores"></p>
   </body>
